@@ -1,0 +1,14 @@
+version: '2'
+services:
+  node-with-redis:
+    build: .
+    ports:
+      - "5000:8888"
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+
